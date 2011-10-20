@@ -2109,7 +2109,7 @@ handle_display_data(struct task *task, uint32_t events)
 }
 
 struct display *
-display_create(int *argc, char **argv[], const GOptionEntry *option_entries)
+display_create(const GOptionEntry *option_entries)
 {
 	struct display *d;
 	GOptionContext *context;
@@ -2128,13 +2128,7 @@ display_create(int *argc, char **argv[], const GOptionEntry *option_entries)
 					      NULL, NULL);
 	g_option_group_add_entries(xkb_option_group, xkb_option_entries);
 	g_option_context_add_group (context, xkb_option_group);
-
-	if (!g_option_context_parse(context, argc, argv, &error)) {
-		fprintf(stderr, "option parsing failed: %s\n", error->message);
-		exit(EXIT_FAILURE);
-	}
-
-        g_option_context_free(context);
+  g_option_context_free(context);
 
 	d = malloc(sizeof *d);
 	if (d == NULL)

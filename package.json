@@ -1,0 +1,16 @@
+{
+  "author": "Elijah Insua <tmpvar@gmail.com> (http://tmpvar.com)",
+  "name": "wayland",
+  "description": "Bindings to the wayland display server",
+  "version": "0.0.1",
+  "repository": {
+    "url": ""
+  },
+  "engines": {
+    "node": "=0.5.x"
+  },
+  "dependencies": {
+    "canvas": "~0.7.3"
+  },
+  "devDependencies": {}
+}
